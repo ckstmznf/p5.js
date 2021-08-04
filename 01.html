@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <script>
+        let canvasSize = 600;
+        let count = 30;
+        let pixeSize = canvasSize / count;
+
+        function setup() {
+            // document.querySelector("#canvasSize").value = canvasSize
+            // document.querySelector("#count").value = count
+
+
+            createCanvas(canvasSize, canvasSize)
+            background(220)
+
+            fill("black")
+            noStroke()
+
+            for (let i = 0; i < count; i++) {
+                for (let j = 0; j < count; j++) {
+                    fill(random(257), random(257), random(257))
+                    rect(pixeSize * j, pixeSize * i, pixeSize)
+                }
+            }
+        }
+
+        function draw() {
+            // canvasSize = Number(document.querySelector("#canvasSize").value);
+            // count = Number(document.querySelector("#count").value);
+            // canvasSize = canvasSize / count
+
+            fill(random(257), random(257), random(257))
+            let pos_x = pixeSize * Math.floor(random(count))
+            let pos_y = pixeSize * Math.floor(random(count))
+            rect(pos_x, pos_y, pixeSize)
+        }
+    </script>
+
+    <style>
+        * {
+            margin : 0; padding : 0;
+        }
+
+        body, main{
+            width: 100%;
+            height: 100vh;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <label for="canvasSize">전체 길이</label><input type="number" id="canvasSize">
+    <label for="count">개수</label><input type="number" id="count"> -->
+</body>
+
+</html>
